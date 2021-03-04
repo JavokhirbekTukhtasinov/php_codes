@@ -21,7 +21,7 @@ $pattern1 = "#^[A-Z]{5}$#";
 $pattern2 = "#^([A-Z]{2})([1-9])([A-Z]{2})$#";
 $pattern3 = "#^([1-9])([A-Z]{2})([1-9])([A-Z])$#";
 $pattern4 = "#^([A-Z])([1-9])([A-Z]{2})([1-9])$#";
-$pattern5 = "#^([A-Z])([1-9]{2)([A-Z])([1-8])$#";
+$pattern5 = "#^([A-Z])([1-9]{2})([A-Z])([1-9])$#";
 
 //Validate the keys
 $is_num1_valid = preg_match($pattern1,$num1);
@@ -98,6 +98,8 @@ if (isset($_POST["submit"])) {
 button {
     margin-top:10px;
     padding:5px 10px 5px 10px;
+    border-radius:5px;
+    cursor:pointer;
 }
 h2, h4 {
     color:lightblue;
@@ -121,7 +123,7 @@ body {
 }
 input{
     padding-top:5px;
-    
+    border-radius:5px;
 }
 </style>
 </body>
