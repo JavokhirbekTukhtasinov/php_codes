@@ -78,7 +78,7 @@ if (isset($_POST["submit"])) {
     display:inline;
     background-color:green;
     color: white;
-    font-size:30px;
+    font-size:20px;
 
 }
 .err {
@@ -106,7 +106,11 @@ h2, h4 {
 }
 h2 {
     text-align:center;
-    margin-bottom:28px;
+    margin-bottom:20px;
+}
+h4 {
+    margin-top:15px;
+    margin-bottom:15px;
 }
 body {
     background-color:black;
