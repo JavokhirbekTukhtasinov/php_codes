@@ -1,0 +1,23 @@
+body{
+    background-color: aqua;
+}
+td {
+    border: 2px solid black;
+    height: 80px;
+    width: 80px;
+}
+
+
+.white_square{
+    background-color: whitesmoke;
+
+}
+.black_square{
+    background-color: black;
+}
+
+.figure{
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+}
