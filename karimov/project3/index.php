@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="nav/nav_css.css">
 </head>
 <body>
-<?php include "nav/header.php"?>
+<?php include "header.php"?>
+<!--DROP DOWN MENU STARTS-->
 <nav>
 <ul>
     <li><a href="">Medical Department</a>
@@ -90,6 +91,7 @@
     </li>
 </ul>
 </nav>
-<?php include "nav/footer.php"?>
+<!--DROP DOWN MENU ENDS-->
+<?php include "footer.php"?>
 </body>
 </html>
