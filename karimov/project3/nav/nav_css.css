@@ -1,0 +1,22 @@
+header{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+.logo{
+    cursor: pointer;
+    height: 50px;
+    margin: auto;
+}
+.buttons{
+    border: 1px grey solid;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    cursor: pointer;
+}
+#flag{
+    cursor: pointer;
+    padding: 5px;
+}
