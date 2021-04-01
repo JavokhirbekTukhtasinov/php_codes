@@ -1,0 +1,22 @@
+* {
+    padding: 10px;
+}
+#airports{
+    width: 800px;
+    height: 500px;
+    background-color: floralwhite;
+    border: 2px solid wheat;
+    margin: auto;
+}
+body{
+    background-color: #0f6674!important;
+}
+.main_text{
+    text-align: center;
+    font-family: "Segoe Print";
+    font-weight: bold;
+    font-size: 50px;
+}
+table{
+    background-color: transparent;
+}

@@ -1,0 +1,26 @@
+.container {
+	width: 90%;
+	height: 200px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	margin: 30px auto;
+	background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS4-UbNlFNSoLAScOn36hA9Jkg9ClOIOiqNw&usqp=CAU);
+}
+.table-cover {
+	background-color: blue;
+	margin: 0 50px;
+	border-collapse: collapse;
+}
+.table-cover td {
+	border: 1px solid red;
+	border-collapse: collapse;
+	padding: 5px auto;
+}
+.table-cover table {
+	border-collapse: collapse;
+	width: 100%;
+	padding: 10px;
+}
+.table-cover table tr {
+}

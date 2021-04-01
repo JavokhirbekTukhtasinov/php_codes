@@ -18,10 +18,18 @@ if ($_SESSION['is_user_logged_in'] !=1){
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Azamatjon Karimov</title>
+    <link rel="stylesheet" href="facebook.css">
 </head>
 
 <body>
+<<<<<<< HEAD
     <a href="Logout.php">Logout</a>
+=======
+<a href="Logout.php">Logout</a>
+<hr>
+<h1>hey</h1>
+
+>>>>>>> 712f86d559b4f5fbde3963b344e110e4b4c5eb07
 </body>
 
 </html>
