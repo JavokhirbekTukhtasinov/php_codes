@@ -1,0 +1,33 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.titanic_title {
+	text-align: center;
+	font-size: 30px;
+	color: lightcoral;
+}
+form {
+	align-items: center;
+}
+.container {
+	background-color: lightgreen;
+	margin: 30px auto;
+	justify-content: center;
+	background-color: red;
+}
+.main_container {
+	background-color: lightgreen;
+	margin: 30px auto;
+	border: 1px solid black;
+	align-items: center;
+	display: flex;
+	position: relative;
+	margin-left: 50px !important;
+}
+table {
+	text-align: center;
+	border: 1px solid black !important;
+}
