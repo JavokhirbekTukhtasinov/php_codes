@@ -13,7 +13,6 @@
             $servername = "127.0.0.1";
             $username = "root";
             $password = "";
-           
             try {
                 $this->con = new \mysqli($servername, $username, $password, $dbname);
             }catch(Exception $e) {
@@ -66,3 +65,4 @@
             }
         }
     }
+    //$db = new database();

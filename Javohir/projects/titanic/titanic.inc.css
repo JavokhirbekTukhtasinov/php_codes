@@ -8,24 +8,31 @@
 	text-align: center;
 	font-size: 30px;
 	color: lightcoral;
+	display: block !important;
 }
 form {
 	align-items: center;
+}
+
+label {
+	font-size: 20px;
+	color: yellowgreen;
+	margin-right: 10px;
+}
+button {
+	margin-left: 10px;
 }
 .container {
 	background-color: lightgreen;
 	margin: 30px auto;
 	justify-content: center;
-	background-color: red;
+	display: flex;
 }
 .main_container {
 	background-color: lightgreen;
 	margin: 30px auto;
 	border: 1px solid black;
 	align-items: center;
-	display: flex;
-	position: relative;
-	margin-left: 50px !important;
 }
 table {
 	text-align: center;
