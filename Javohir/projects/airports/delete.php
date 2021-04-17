@@ -18,13 +18,13 @@ if (!$id){
     exit;
 }
 
-"UPDATE airports SET city = $city_name where id = $id;";
+
 
 
 ############################################################################
 require_once "database.php";
 $obj = new \Database\database("korea");
-$sql = "DELETE FROM airports WHERE  id = $id;";
+$sql = "DELETE FROM airports WHERE id = $id;";
 $delete = $obj->sql($sql);
 header("Location: ". $link."&order=$order&orderby=$orderby");
 exit;

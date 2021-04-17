@@ -1,22 +1,19 @@
 <?php
-exit("hello, im backend ");
-$id = $_GET['id']??null;
+ini_set("display_errors", 1);
+$id = $_POST['id']??null;
 $id = (int) $id;
-$city_name = $_GET["city_name"]??null;
-$city_name = $_GET["city_name"]??null;
+$city_name = $_POST['city_name']??null;
+$country_name = $_POST['country_name']??null;
 if (!$id){
-   exit("the city name is empty or invalid");
+    exit('The city id is empty or invalid');
 }
-if (empty($city_name) || empty($country_name) ) {
-    exit("the city name is empty");
+if (empty($city_name)){
+    exit('The city name is empty');
 }
-
-
-
-
 ############################################################################
 require_once "database.php";
-$obj = new \Database\database("korea");
-$sql = "UPDATE airports SET city = '$city_name' where id = $id;";
-$delete = $obj->sql($sql);
-exit(200);
+$obj = new \Database\database("myitedu");
+$sql = "UPDATE airports SET city = '$city_name' WHERE id = $id;";
+$update = $obj->sql($sql);
+echo 200;
+exit;

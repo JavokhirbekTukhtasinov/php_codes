@@ -1,0 +1,81 @@
+.right_top_left button {
+	border: none;
+}
+.right_top_right button {
+	border: none;
+}
+.right_top {
+	display: inline-block;
+}
+.right_top_left {
+	background-color: red;
+	display: flex;
+	position: relative;
+	width: 50%;
+}
+.right_top_right {
+	background-color: blue;
+	position: relative;
+	display: flex;
+	width: 50%;
+}
+.lsidebar_menu li:hover > .menu_icon {
+	visibility: visible;
+	width: 22px;
+	position: relative;
+	top: -5px;
+}
+.menu_icon {
+	width: 22px;
+	position: relative;
+	top: -5px;
+	visibility: hidden;
+}
+.lsidebar_menu li:hover > a {
+	color: deeppink;
+}
+.lsidebar_menu li:hover {
+	padding: 5px 5px 5px 10px;
+	background-color: rgb(116, 112, 112);
+}
+.lsidebar_menu li {
+	padding: 5px 5px 5px 10px;
+	position: relative;
+	left: -25px;
+}
+.lsidebar_menu {
+	list-style: none;
+	display: block !important;
+}
+.lsidebar_menu a {
+	text-decoration: none;
+	color: black;
+	padding: 5px 5px 5px 10px;
+}
+.logo {
+	width: 100px;
+}
+#left_window p {
+	text-align: center;
+}
+#left_window {
+	width: 20%;
+	height: 100%;
+	display: inline-block;
+
+	background-color: lightgrey;
+}
+#right_window {
+	width: 80%;
+	height: 100%;
+	display: inline-block;
+}
+#jumboq {
+	background-color: whitesmoke;
+	width: 1000px;
+	height: 600px;
+	margin: 80px auto;
+}
+body {
+	background-color: black;
+}

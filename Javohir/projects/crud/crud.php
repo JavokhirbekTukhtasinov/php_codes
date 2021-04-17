@@ -12,8 +12,11 @@
 
 <body>
 
-
-
+    <?php
+$conn = new mysqli('localhost','root','','korea');
+$sql = "SELECT *FROM airports order by city desc limit 5";
+$result = $conn->query($sql);
+   ?>
     <!-- Button trigger modal -->
 
 
@@ -29,28 +32,22 @@
                     <div class="modal-body">
 
                         <div class="form-group">
-                            <label>First Name</label>
-                            <input type="text" required name="fname" class="form-control"
-                                placeholder="Enter First Name">
+                            <label>City</label>
+                            <input type="text" required name="city" class="form-control" placeholder="Enter City Name">
 
                         </div>
 
                         <div class="form-group">
-                            <label>last Name</label>
-                            <input type="text" required name="lname" class="form-control" placeholder="Enter Last Name">
+                            <label>Name</label>
+                            <input type="text" required name="name" class="form-control"
+                                placeholder="Enter Airport Name">
                         </div>
 
                         <div class="form-group">
-                            <label>Cours</label>
-                            <input type="text" required name="course" class="form-control" placeholder="Enter Course">
-                        </div>
-                        <div class="form-group">
-                            <label>Phone number</label>
-                            <input type="number" required name="contact" class="form-control"
+                            <label>Country</label>
+                            <input type="text" required name="country" class="form-control"
                                 placeholder="Enter Phone Number">
                         </div>
-
-
 
                     </div>
                     <div class="modal-footer">
@@ -61,11 +58,52 @@
             </div>
         </div>
     </div>
+    <!-- ############################################################### -->
+
+    <!--EDIT popup form-->
+
+    <div class="modal fade" id="editmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Student Data</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="insertcode.php" method="POST">
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" required name="city" class="form-control" placeholder="Enter City Name">
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" required name="name" class="form-control"
+                                placeholder="Enter Airport Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Country</label>
+                            <input type="text" required name="country" class="form-control"
+                                placeholder="Enter Phone Number">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" name="insertData" class="btn btn-primary">Edit Data</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <div class="jumbotron">
             <div class="card">
-                <h2>PHP CRUD bootstrap modal(pop up model)</h2>
+                <h2>World Airports</h2>
             </div>
             <div class="card">
                 <div class="card-body">
@@ -73,6 +111,48 @@
                         data-bs-target="#studentaddmodel">
                         Add Data
                     </button>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="card-body">
+
+
+                    <table class="table caption-top">
+                        <caption></caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">City</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Country</th>
+                                <th scope="col">Edit</th>
+                            </tr>
+                        </thead>
+                        <?php
+                if ($result) {
+                    foreach($result as $row){
+                ?>
+                        <tbody>
+                            <tr>
+                                <td><?php echo $row['id'];?></td>
+                                <td><?php echo $row['city'];?></td>
+                                <td><?php echo $row['name'];?></td>
+                                <td><?php echo $row['country'];?></td>
+                                <td>
+                                    <button name="submit" id="editbtn" class="btn btn-success editbtn">EDIT</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                        <?php
+                        }
+                    }else {
+                    echo 'no data recorded';
+                    }
+
+                    ?>
+                    </table>
                 </div>
             </div>
         </div>
@@ -84,6 +164,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
     </script>
+    <script>
+    $(document).ready(function() {
+        $('.editbtn').on('click', function() {
+            $('#editmodal').modal('show');
+        });
+    });
+    </script>
+
 </body>
 
 </html>

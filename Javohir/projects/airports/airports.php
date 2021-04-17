@@ -9,9 +9,13 @@
     <title>The World Airports</title>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="airports.css">
-    <script src="jquery-3.5.1.min.js"></script>
-    <script src="Javohir/projects/airports/airports.js"></script>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
+    </script>
+    <script src="jquery-3.5.1.js"></script>
+    <script src="airports.js"></script>
 </head>
 
 <body>
@@ -38,14 +42,12 @@ if ($keyword){
     }
 }else{
     $sql = "SELECT * FROM airports order by id asc limit 5  order by $order $orderby;";
-}if ($keyword==="") {
-    $sql = "SELECT * FROM airports order by id asc limit 5  order by $order $orderby;";
 }
 
 
-/////////////////////////////////
+
 $airports = $obj->sql($sql);
-$link = "index.php?keyword=$keyword&field=$field";
+$link = "airports.php?keyword=$keyword&field=$field";
 ?>
     <div id="airports">
         <div class="airports_title">The World Airports</div>
@@ -75,41 +77,41 @@ $link = "index.php?keyword=$keyword&field=$field";
                 <tr>
                     <th>ID
                         <a class="btn_asc_desc" href="<?php echo $link;?>&order=id&orderby=asc"><img
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGmP8fXsfYCZImDgg5nqOk8wozY3ZxQPAB7cj0z99_f9NDRqcCbGQ26VJYaQo6mh0aR1A&usqp=CAU"></a>
+                                src="img/btn_arrow_up.png"></a>
                         <a class="btn_asc_desc" href="<?php echo $link;?>&order=id&orderby=desc"><img
-                                src="https://pngtree.com/freepng/vector-down-arrow-icon_4184901.html"></a>
+                                src="img/btn_arrow_down.png"></a>
                     </th>
                     <th>City
                         <a class="btn_asc_desc" href="<?php echo $link;?>&order=city&orderby=asc"><img
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGmP8fXsfYCZImDgg5nqOk8wozY3ZxQPAB7cj0z99_f9NDRqcCbGQ26VJYaQo6mh0aR1A&usqp=CAU"></a>
+                                src="img/btn_arrow_up.png"></a>
                         <a class="btn_asc_desc" href="<?php echo $link;?>&order=city&orderby=desc"><img
-                                src="https://pngtree.com/freepng/vector-down-arrow-icon_4184901.html"></a>
+                                src="img/btn_arrow_down.png"></a>
                     </th>
                     <th>Country
                         <a class="btn_asc_desc" href="<?php echo $link;?>&order=country&orderby=asc"><img
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGmP8fXsfYCZImDgg5nqOk8wozY3ZxQPAB7cj0z99_f9NDRqcCbGQ26VJYaQo6mh0aR1A&usqp=CAU"></a>
+                                src="img/btn_arrow_up.png"></a>
                         <a class="btn_asc_desc" href="<?php echo $link;?>&order=country&orderby=desc"><img
-                                src="https://pngtree.com/freepng/vector-down-arrow-icon_4184901.html"></a>
+                                src="img/btn_arrow_down.png"></a>
                     </th>
                     <th>Name
                         <a class="btn_asc_desc" href="<?php echo $link;?>&order=name&orderby=asc"><img
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGmP8fXsfYCZImDgg5nqOk8wozY3ZxQPAB7cj0z99_f9NDRqcCbGQ26VJYaQo6mh0aR1A&usqp=CAU"></a>
+                                src="img/btn_arrow_up.png"></a>
                         <a class="btn_asc_desc" href="<?php echo $link;?>&order=name&orderby=desc"><img
-                                src="https://pngtree.com/freepng/vector-down-arrow-icon_4184901.html"></a>
+                                src="img/btn_arrow_down.png"></a>
                     </th>
                     <th>Action</th>
                 </tr>
                 <?php foreach ($airports as $airport):?>
                 <tr>
                     <td><?php echo $airport['id'];?></td>
-                    <td data-id="<?php echo $airport['id'];?>" class="airport_city" contenteditable="true">
-                        <?php echo $airport['city'];?></td>
+                    <td data-id="<?=$airport['id']?>" id="city_<?=$airport['id']?>" class="airport_city"
+                        contenteditable="true"><?php echo $airport['city'];?></td>
                     <td><?php echo $airport['country'];?></td>
                     <td><?php echo $airport['name'];?></td>
                     <td>
-                        <button id="airport_<?php echo $airport['id'];?>"
-                            class="btn btn-success btn_btn-update airport_<?php echo $airport['id'];?>"
-                            type="button">update</button>
+                        <button data-id="<?php echo $airport['id'];?>"
+                            class="btn btn-success btn_airport_update airport_<?=$airport['id']?>"
+                            type="button">Update</button>
                         <a data-id="<?php echo $airport['id'];?>" class="btn btn-danger btn_delete"
                             href="delete.php?id=<?php echo "{$airport['id']}&field=$field&order=$order&orderby=$orderby&keyword=$keyword"?>">Delete</a>
                     </td>
@@ -117,25 +119,13 @@ $link = "index.php?keyword=$keyword&field=$field";
                 <?php endforeach; ?>
             </table>
         </div>
+    </div>
 
-    </div>
-    <div class="modal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Modal body text goes here.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    <?php
+include_once "/xampp/htdocs/korea/Javohir/projects/airports/modal.php";
+?>
+    <script src="/bootstrap/js/bootstrap.js"></script>
 </body>
 
 </html>
